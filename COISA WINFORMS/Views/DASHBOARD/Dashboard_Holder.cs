@@ -1,4 +1,5 @@
-﻿using FontAwesome.Sharp;
+﻿using COISALIBRARY.Interfaces;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +15,18 @@ namespace COISA_WINFORMS.Views.DASHBOARD
 {
     public partial class Dashboard_Holder : Form
     {
+        private  readonly IUnitOfWork _unitOfWork;
         IconButton _activeButton;
-
+        ProductCategoriesPage p ;
         Oders Oders = new Oders();
-        ProductCategories ProductCategories = new ProductCategories();
+        // ProductCategoriesPage ProductCategories = new();
         Products Products= new Products();
         Users Users = new Users();
         Settings Settings = new Settings();
         SuggestionBox SuggestionBox = new SuggestionBox();
-        public Dashboard_Holder()
+   
+
+        public Dashboard_Holder(IUnitOfWork unitOfWork)
         {
             InitializeComponent();
 
@@ -31,7 +35,8 @@ namespace COISA_WINFORMS.Views.DASHBOARD
             this.ControlBox = false;
             panelLabeler.Visible = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-           
+            _unitOfWork = unitOfWork;
+            p = new ProductCategoriesPage(_unitOfWork);
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -83,7 +88,7 @@ namespace COISA_WINFORMS.Views.DASHBOARD
 
                 _activeButton.ForeColor = Color.White;
                 _activeButton.IconColor = Color.White;
-                _activeButton.BackColor = Color.FromArgb(93, 107, 153);
+                _activeButton.BackColor = Color.FromArgb(239, 108, 51);
                 panelLabeler.Height = _activeButton.Height;
                 panelLabeler.Location= new Point(0, _activeButton.Location.Y);
                 panelLabeler.Visible = true;
@@ -107,7 +112,7 @@ namespace COISA_WINFORMS.Views.DASHBOARD
         {
             if (_activeButton != null)
             {
-                _activeButton.BackColor = Color.FromArgb(64, 80, 141);
+                _activeButton.BackColor = Color.FromArgb(12, 74, 96);
                 _activeButton.IconColor = Color.Silver;
                 _activeButton.ForeColor = Color.Silver;
                 
@@ -128,7 +133,8 @@ namespace COISA_WINFORMS.Views.DASHBOARD
 
         private void iconButtonCategories_Click(object sender, EventArgs e)
         {
-            DisplayUserControl(ProductCategories);
+           
+            DisplayUserControl(p);
             ActiveButton(sender, "Product Categories");
         }
 

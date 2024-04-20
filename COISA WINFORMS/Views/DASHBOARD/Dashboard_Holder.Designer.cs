@@ -73,6 +73,7 @@
             // 
             // panelDashboardButtons
             // 
+            this.panelDashboardButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(74)))), ((int)(((byte)(96)))));
             this.panelDashboardButtons.Controls.Add(this.iconButtonSugesBox);
             this.panelDashboardButtons.Controls.Add(this.iconButtonSettings);
             this.panelDashboardButtons.Controls.Add(this.iconButtonUsers);
@@ -259,7 +260,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(80)))), ((int)(((byte)(141)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(74)))), ((int)(((byte)(96)))));
             this.panel3.Controls.Add(this.eK_AvaterImage1);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
@@ -380,7 +381,7 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(80)))), ((int)(((byte)(141)))));
+            this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(108)))), ((int)(((byte)(51)))));
             this.labelTitle.Location = new System.Drawing.Point(14, 16);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(159, 39);
@@ -412,7 +413,7 @@
             // 
             // panelUserContolsHolder
             // 
-            this.panelUserContolsHolder.BackColor = System.Drawing.Color.White;
+            this.panelUserContolsHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(233)))), ((int)(((byte)(245)))));
             this.panelUserContolsHolder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelUserContolsHolder.Location = new System.Drawing.Point(250, 62);
             this.panelUserContolsHolder.Name = "panelUserContolsHolder";

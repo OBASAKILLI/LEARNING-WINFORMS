@@ -10,7 +10,7 @@
     <Compile Update="Views\DASHBOARD\Oders.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\DASHBOARD\ProductCategories.cs">
+    <Compile Update="Views\DASHBOARD\ProductCategoriesPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Views\DASHBOARD\Products.cs">
@@ -32,6 +32,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="wwwroot\Custom Controls\EK_AvaterImage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="wwwroot\Custom Controls\EK_RoundedTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

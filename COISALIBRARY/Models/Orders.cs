@@ -11,7 +11,7 @@ namespace COISALIBRARY.Models
     {
         [Key]
         [MaxLength(50)]
-        public string docref { get; set; }
+        public string strOderId { get; set; }
         public string user_id { get; set; }
         public string order_no { get; set; }
         public DateTime date { get; set; }

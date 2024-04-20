@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic.Logging;
+﻿using COISALIBRARY.Interfaces;
+using Microsoft.VisualBasic.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +15,18 @@ namespace COISA_WINFORMS.Views.Login
     public partial class SignUp : Form
     {
         private LoginPage _loginPage;
-        public SignUp(LoginPage loginPage)
+        private readonly IUnitOfWork _unitOfWork;
+
+        public SignUp(LoginPage loginPage,IUnitOfWork unitOfWork)
         {
             InitializeComponent();
             _loginPage = loginPage;
+            _unitOfWork = unitOfWork;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SignIn signIn = new SignIn(_loginPage);
+            SignIn signIn = new SignIn(_loginPage, _unitOfWork);
 
             _loginPage.OpenChildForm(signIn);
         }

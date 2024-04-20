@@ -21,9 +21,16 @@ namespace COISALIBRARY.Models
         [Required]
         [DisplayName("Phone")]
         public string strPhone { get; set; }
-        [Required]        
-        public string password { get; set; }      
-        public string Role { get; set; }
+        [Required]
+        public string password { get; set; }
+        public Role  Role { get; set; }
 
+     
+    }
+    public enum Role
+    {
+        Supper_Admin,
+        Admin,
+        Client
     }
 }

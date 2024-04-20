@@ -9,15 +9,13 @@ namespace COISALIBRARY.Models
     {
         [Key]
         [MaxLength(50)]
-
-        public string strCatId { get; set; }
+        public string strId { get; set; }
         [Required]
         [DisplayName("Product category")]
         public string strCatName { get; set; }
-        [Required]
-        [DisplayName("Description")]
-        public string strDescription { get; set; }
         public string strCatPhoto { get; set; }
-        
+        public bool Isdeleted { get; set; }
+
+       
     }
 }

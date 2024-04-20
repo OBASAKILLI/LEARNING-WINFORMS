@@ -1,4 +1,5 @@
 using COISA_WINFORMS.Views.Login;
+using COISALIBRARY.Interfaces;
 using System.Runtime.InteropServices;
 
 
@@ -7,20 +8,22 @@ namespace COISA_WINFORMS
     public partial class LoginPage : Form
     {
         public Panel panelSignIn_SignUpPanel;
+        private readonly IUnitOfWork _unitOfWork;
 
-
-        public LoginPage()
+        public LoginPage(IUnitOfWork unitOfWork)
         {
             this.IsMdiContainer = true;
             InitializeComponent();
+            _unitOfWork = unitOfWork;
             this.FormBorderStyle = FormBorderStyle.Sizable;
             this.Text = string.Empty;
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             panelSignIn_SignUpPanel = panelSignIn_SignUp;
 
-            SignIn signIn = new SignIn(this);
+            SignIn signIn = new SignIn(this, _unitOfWork);
             OpenChildForm(signIn);
+           
         }
 
         private void iconButtonminimize_Click(object sender, EventArgs e)

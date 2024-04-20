@@ -1,4 +1,5 @@
 ﻿using COISA_WINFORMS.Views.DASHBOARD;
+using COISALIBRARY.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,13 @@ namespace COISA_WINFORMS.Views.Login
     public partial class SignIn : Form
     {
         private LoginPage _loginPage;
-        public SignIn(LoginPage login)
+        private readonly IUnitOfWork _unitOfWork;
+
+        public SignIn(LoginPage login,IUnitOfWork unitOfWork)
         {
             InitializeComponent();
             _loginPage=login;
+            _unitOfWork = unitOfWork;
         }
 
         private void SignIn_Load(object sender, EventArgs e)
@@ -27,14 +31,14 @@ namespace COISA_WINFORMS.Views.Login
 
         private void iconButtonSignUp_Click(object sender, EventArgs e)
         {
-            SignUp signUp = new SignUp(_loginPage);
+            SignUp signUp = new SignUp(_loginPage, _unitOfWork);
             _loginPage.OpenChildForm(signUp);
         }
 
         private void iconButtonSignIn_Click(object sender, EventArgs e)
         {
 
-            Dashboard_Holder dashboard_Holder = new Dashboard_Holder();
+            Dashboard_Holder dashboard_Holder = new Dashboard_Holder(_unitOfWork);
             dashboard_Holder.Show();
             this.Hide();
            _loginPage.Hide();
