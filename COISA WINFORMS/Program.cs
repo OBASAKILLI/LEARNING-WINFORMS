@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using COISA_WINFORMS.Views;
 
 namespace COISA_WINFORMS
 {
@@ -31,6 +32,7 @@ namespace COISA_WINFORMS
                     string? connectionString = "Server=localhost;Database=CoisaWinFormsApp;port=3306;Uid=root;Pwd=kili100000";
                     services.AddDbContext<CoisaDbContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
                     services.AddTransient<IUnitOfWork, UnitOfWork>();
+                   
                     services.AddTransient<LoginPage>();
                 });
         }

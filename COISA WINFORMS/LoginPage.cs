@@ -1,3 +1,4 @@
+using COISA_WINFORMS.Views;
 using COISA_WINFORMS.Views.Login;
 using COISALIBRARY.Interfaces;
 using System.Runtime.InteropServices;
@@ -9,7 +10,6 @@ namespace COISA_WINFORMS
     {
         public Panel panelSignIn_SignUpPanel;
         private readonly IUnitOfWork _unitOfWork;
-
         public LoginPage(IUnitOfWork unitOfWork)
         {
             this.IsMdiContainer = true;
@@ -20,7 +20,7 @@ namespace COISA_WINFORMS
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             panelSignIn_SignUpPanel = panelSignIn_SignUp;
-
+            
             SignIn signIn = new SignIn(this, _unitOfWork);
             OpenChildForm(signIn);
            

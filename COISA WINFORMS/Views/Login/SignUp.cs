@@ -26,9 +26,9 @@ namespace COISA_WINFORMS.Views.Login
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SignIn signIn = new SignIn(_loginPage, _unitOfWork);
+          //  SignIn signIn = new SignIn(_loginPage, _unitOfWork);
 
-            _loginPage.OpenChildForm(signIn);
+           // _loginPage.OpenChildForm(signIn);
         }
     }
 }

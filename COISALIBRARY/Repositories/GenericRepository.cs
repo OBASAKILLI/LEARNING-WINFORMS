@@ -24,7 +24,7 @@ namespace COISALIBRARY.Repositories
             _context.Set<T>().Add(entity);
         }
 
-        public async Task<IEnumerable<T>> GetAll(T entity)
+        public async Task<List<T>> GetAll(T entity)
         {
             return await _context.Set<T>().ToListAsync();  
         }

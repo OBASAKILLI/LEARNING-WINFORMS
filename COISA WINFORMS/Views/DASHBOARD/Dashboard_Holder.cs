@@ -24,8 +24,8 @@ namespace COISA_WINFORMS.Views.DASHBOARD
         Users Users = new Users();
         Settings Settings = new Settings();
         SuggestionBox SuggestionBox = new SuggestionBox();
-   
 
+        
         public Dashboard_Holder(IUnitOfWork unitOfWork)
         {
             InitializeComponent();
@@ -36,8 +36,11 @@ namespace COISA_WINFORMS.Views.DASHBOARD
             panelLabeler.Visible = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             _unitOfWork = unitOfWork;
+          
             p = new ProductCategoriesPage(_unitOfWork);
+            
         }
+      
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();

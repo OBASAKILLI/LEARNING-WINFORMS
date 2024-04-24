@@ -4,6 +4,9 @@
     <Compile Update="LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\CustomControls\CategoryCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Views\DASHBOARD\Dashboard_Holder.cs">
       <SubType>Form</SubType>
     </Compile>

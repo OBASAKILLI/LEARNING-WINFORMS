@@ -16,12 +16,13 @@ namespace COISA_WINFORMS.Views.Login
     {
         private LoginPage _loginPage;
         private readonly IUnitOfWork _unitOfWork;
-
+     
         public SignIn(LoginPage login,IUnitOfWork unitOfWork)
         {
             InitializeComponent();
             _loginPage=login;
             _unitOfWork = unitOfWork;
+           
         }
 
         private void SignIn_Load(object sender, EventArgs e)
